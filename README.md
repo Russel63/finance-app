@@ -1,11 +1,11 @@
 ## Greetings dear visitors! My name is Ruslan Leushkin! 
 ### I am theoretical social-scientist and Python programmer 
 
-**Research experience:** 10 years
+**Research experience:** 12 years
 
-**Programming experience:** 2 years
+**Programming experience:** 5 years
 
-**Stack:** Python,  C, C++, Pandas, Numpy, Matplotlib, Scikit-Learn, SQL, Git, VS Code.  
+**Stack:** Python, C, C++, Pandas, Numpy, Matplotlib, Scikit-Learn, SQL, Git, VS Code.  
 
 [![My Skills](https://skillicons.dev/icons?i=py,c,cpp,ai,sklearn,tensorflow,sqlite,github,vscode)](https://skillicons.dev)
 
