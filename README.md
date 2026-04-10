@@ -3,7 +3,7 @@
 
 **Research experience:** 12 years
 
-**Programming experience:** 5 years
+**Programming experience:** 4 years
 
 **Stack:** Python, C, C++, Pandas, Numpy, Matplotlib, Scikit-Learn, SQL, Git, VS Code.  
 
