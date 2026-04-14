@@ -1,45 +1,51 @@
-## Greetings dear visitors! My name is Ruslan Leushkin! 
-### I am theoretical social-scientist and Python programmer 
+# Finance App
 
-**Research experience:** 12 years
+A stock trading simulator built with Flask. Users can register, look up real-time stock quotes, buy/sell shares, and track their portfolio and transaction history.
 
-**Programming experience:** 4 years
+## Features
 
-**Stack:** Python, C, C++, Pandas, Numpy, Matplotlib, Scikit-Learn, SQL, Git, VS Code.  
+- Register / Login / Logout
+- Look up stock quotes by symbol
+- Buy and sell shares
+- Portfolio overview with current prices and total value
+- Full transaction history
+- Password change in settings
+- Reset progress (discard all holdings)
 
-[![My Skills](https://skillicons.dev/icons?i=py,c,cpp,ai,sklearn,tensorflow,sqlite,github,vscode)](https://skillicons.dev)
+## Stack
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Russel63&layout=compact)
+- **Backend:** Python, Flask, CS50 SQL (SQLite)
+- **Auth:** Werkzeug password hashing, Flask-Session
+- **Data:** `lookup()` helper for real-time stock prices
 
-Courses completed:
-- CS50, «Introduction to Computer Science» – Harvard University
-- CS50AI «Introduction to Artificial Intelligence with Python» – Harvard University
-- 6.00.1, «Introduction to Computer Science and Programming Using Python» – MIT
-- 6.00.2, «Introduction to Computational Thinking and Data Science» – MIT
-- «Mathematics for data analysis and data science» - Yandex Workshop 
-- «Computer Science: Programming with a Purpose» – Princeton University
-- «How to Code: Simple Data» – The University of British Columbia
+## Database Schema
 
-<!-- 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Russel63&layout=pie)](https://github.com/anuraghazra/github-readme-stats)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Russel63&hide_progress=true)
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Russel63)](https://github.com/anuraghazra/github-readme-stats)
--->
+| Table          | Key Columns                                      |
+|----------------|--------------------------------------------------|
+| `users`        | `id`, `username`, `hash`, `cash`                 |
+| `owners`       | `user_id`, `sign`, `value`                       |
+| `transactions` | `user_id`, `sign`, `value`, `price`, `time`      |
 
-<!--
+## Setup
 
+```bash
+pip install flask flask-session cs50 werkzeug
+flask run
+```
 
+Make sure `finance.db` exists with the schema above before running.
 
-**Russel63/Russel63** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Routes
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+| Route        | Methods    | Description              |
+|--------------|------------|--------------------------|
+| `/`          | GET        | Portfolio overview        |
+| `/register`  | GET, POST  | Create account            |
+| `/login`     | GET, POST  | Log in                    |
+| `/logout`    | GET        | Log out                   |
+| `/quote`     | GET, POST  | Look up a stock quote     |
+| `/buy`       | GET, POST  | Buy shares                |
+| `/sell`      | GET, POST  | Sell shares               |
+| `/history`   | GET        | Transaction history       |
+| `/settings`  | GET, POST  | Change password           |
+| `/discard`   | POST       | Reset portfolio to $10,000|
